@@ -42,6 +42,7 @@ func products(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		} else {
 			w.Header().Set("content-type", "application/json")
+			w.Write(jsonList)
 		}
 	}
 }
