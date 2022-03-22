@@ -32,3 +32,5 @@ type product struct {
 	Price float64
 	Count int
 }
+
+var productList = []product{}
