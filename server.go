@@ -26,3 +26,9 @@ func rootPage(w http.ResponseWriter, r *http.Request) {
 func products(w http.ResponseWriter, r *http.Request) {
 
 }
+
+type product struct {
+	Name  string
+	Price float64
+	Count int
+}
