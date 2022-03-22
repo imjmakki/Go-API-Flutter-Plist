@@ -22,3 +22,7 @@ func main() {
 func rootPage(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("This is the root page"))
 }
+
+func products(w http.ResponseWriter, r *http.Request) {
+
+}
