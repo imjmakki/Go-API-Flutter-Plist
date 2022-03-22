@@ -33,4 +33,16 @@ type product struct {
 	Count int
 }
 
-var productList = []product{}
+var productList = []product{
+
+	product{"p1", 25.0, 30},
+	product{"p2", 20.0, 10},
+	product{"p3", 250.0, 320},
+	product{"p4", 256.0, 730},
+	product{"p5", 24.0, 340},
+	product{"p6", 10.0, 300},
+	product{"p7", 100.0, 230},
+	product{"p8", 2543.0, 120},
+	product{"p9", 255.0, 10},
+	product{"p10", 257.0, 322},
+}
