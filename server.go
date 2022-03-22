@@ -1,10 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"strconv"
 )
 
 const port = ":5500"
@@ -25,6 +27,23 @@ func rootPage(w http.ResponseWriter, r *http.Request) {
 
 func products(w http.ResponseWriter, r *http.Request) {
 
+	fetchCountPercentage, errInput := strconv.ParseFloat(mux.Vars(r)["fetchCountPercentage"], 64)
+	fetchCount := 0
+
+	if errInput != nil {
+		fmt.Println(errInput.Error())
+	} else {
+		fetchCount = int(float64(len(productList)) * fetchCountPercentage / 100)
+		if fetchCount > len(productList) {
+			fetchCount = len(productList)
+		}
+		jsonList, err := json.Marshal(productList[0:fetchCount])
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		} else {
+			w.Header().Set("content-type", "application/json")
+		}
+	}
 }
 
 type product struct {
