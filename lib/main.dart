@@ -23,7 +23,14 @@ class _AppRunState extends State<AppRun> {
         backgroundColor: Colors.blueGrey.shade200,
         body: SizedBox.expand(
           child: Stack(
-            children: [],
+            children: [
+              FutureBuilder(
+                future: fetchFromServer(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState = ConnectionState.waiting) {}
+                },
+              ),
+            ],
           ),
         ),
       ),
