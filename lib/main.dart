@@ -17,7 +17,7 @@ class AppRun extends StatefulWidget {
 }
 
 class _AppRunState extends State<AppRun> {
-  double fetchCountPercentage = 10;
+  double fetchCountPercentage = 20;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -47,12 +47,30 @@ class _AppRunState extends State<AppRun> {
                         return Card(
                           child: ListTile(
                             title: Text(snapshot.data[index].name),
+                            subtitle: Text(
+                                "Count: ${snapshot.data[index].count} \t Price: ${snapshot.data[index].price}"),
                           ),
                         );
                       },
                     );
                   }
                 },
+              ),
+              Positioned(
+                bottom: 5,
+                right: 5,
+                child: Slider(
+                  value: fetchCountPercentage,
+                  min: 0,
+                  max: 100,
+                  divisions: 10,
+                  label: fetchCountPercentage.toString(),
+                  onChanged: (double value) {
+                    setState(() {
+                      fetchCountPercentage = value;
+                    });
+                  },
+                ),
               ),
             ],
           ),
