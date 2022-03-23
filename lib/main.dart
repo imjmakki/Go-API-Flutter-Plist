@@ -26,6 +26,12 @@ class _AppRunState extends State<AppRun> {
   }
 
   Future<List<Product>> fetchFromServer() async {
-    var url = "http://65.0.125.153:5500/products/$";
+    var url = "http://65.0.125.153:5500/products/$fetchCountPercentage";
+    var response = await http.get(url);
+
+    List<Product> productList = [];
+    if (response.statusCode == 200) {
+      var productMap =
+    }
   }
 }
