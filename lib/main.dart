@@ -41,8 +41,15 @@ class _AppRunState extends State<AppRun> {
                     );
                   }
                   if (snapshot.hasData) {
-                    return Card(
-                      child: ,
+                    return ListView.builder(
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          child: ListTile(
+                            title: Text(snapshot.data[index].name),
+                          ),
+                        );
+                      },
                     );
                   }
                 },
