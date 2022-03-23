@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'productModel.dart';
 
 void main() {
   runApp(AppRun());
