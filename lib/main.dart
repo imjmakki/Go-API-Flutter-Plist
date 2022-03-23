@@ -32,7 +32,10 @@ class _AppRunState extends State<AppRun> {
 
     List<Product> productList = [];
     if (response.statusCode == 200) {
-      var productMap =
+      var productMap = convert.jsonDecode(response.body);
+      for (final item in productMap) {
+        productList.add(Product.fromJson(item));
+      }
     }
   }
 }
