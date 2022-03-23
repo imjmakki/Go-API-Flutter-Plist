@@ -14,6 +14,7 @@ class AppRun extends StatefulWidget {
 }
 
 class _AppRunState extends State<AppRun> {
+  double fetchCountPercentage = 10;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,5 +25,7 @@ class _AppRunState extends State<AppRun> {
     );
   }
 
-  Future<List<Product>> fetchFromServer() async {}
+  Future<List<Product>> fetchFromServer() async {
+    var url = "http://65.0.125.153:5500/products/$";
+  }
 }
