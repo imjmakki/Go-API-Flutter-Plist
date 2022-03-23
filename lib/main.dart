@@ -23,4 +23,6 @@ class _AppRunState extends State<AppRun> {
       ),
     );
   }
+
+  Future<List<Product>> fetchFromServer() async {}
 }
