@@ -14,6 +14,8 @@ class AppRun extends StatefulWidget {
 class _AppRunState extends State<AppRun> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      home: Scaffold(),
+    );
   }
 }
