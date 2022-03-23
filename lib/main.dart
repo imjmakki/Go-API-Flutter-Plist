@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'productModel.dart';
 import 'package:http/http.dart' as http;
@@ -32,7 +34,13 @@ class _AppRunState extends State<AppRun> {
                       child: CircularProgressIndicator(),
                     );
                   }
-                  if (snapshot.hasError) {}
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text("${snapshot.error}",
+                          style: TextStyle(color: Colors.redAccent)),
+                    );
+                  }
+                  if (snapshot.hasData) {}
                 },
               ),
             ],
