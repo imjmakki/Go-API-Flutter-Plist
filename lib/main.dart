@@ -37,5 +37,6 @@ class _AppRunState extends State<AppRun> {
         productList.add(Product.fromJson(item));
       }
     }
+    return productList;
   }
 }
