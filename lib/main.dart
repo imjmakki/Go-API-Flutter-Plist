@@ -24,10 +24,15 @@ class _AppRunState extends State<AppRun> {
         body: SizedBox.expand(
           child: Stack(
             children: [
-              FutureBuilder(
+              FutureBuilder<List<Product>>(
                 future: fetchFromServer(),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.connectionState = ConnectionState.waiting) {}
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  if (snapshot.hasError) {}
                 },
               ),
             ],
