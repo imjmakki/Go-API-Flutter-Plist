@@ -40,7 +40,11 @@ class _AppRunState extends State<AppRun> {
                           style: TextStyle(color: Colors.redAccent)),
                     );
                   }
-                  if (snapshot.hasData) {}
+                  if (snapshot.hasData) {
+                    return Card(
+                      child: ,
+                    );
+                  }
                 },
               ),
             ],
