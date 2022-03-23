@@ -15,7 +15,10 @@ class _AppRunState extends State<AppRun> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(),
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey.shade200,
+        body: SizedBox.expand(),
+      ),
     );
   }
 }
