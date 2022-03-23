@@ -21,7 +21,11 @@ class _AppRunState extends State<AppRun> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blueGrey.shade200,
-        body: SizedBox.expand(),
+        body: SizedBox.expand(
+          child: Stack(
+            children: [],
+          ),
+        ),
       ),
     );
   }
